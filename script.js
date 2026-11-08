@@ -1,33 +1,28 @@
-//your JS code here. If required.
-const container = document.querySelector(".container");
+    const container = document.querySelector(".container");
 
-const fregment = document.createDocumentFragment();
+        const fragment = document.createDocumentFragment();
 
-for (let i = 0; i < 800; i++) {
-    const div = document.createElement("div");
+        for (let i = 0; i < 800; i++) {
+            const div = document.createElement("div");
 
-    div.classList.add("box");
+            div.classList.add("square");
 
-    div.addEventListener("mouseenter", (e) => {
-        const red = Math.floor(Math.random() * 256);
-        const green = Math.floor(Math.random() * 256);
-        const blue = Math.floor(Math.random() * 256);
+            div.addEventListener("mouseenter", (e) => {
+                const red = Math.floor(Math.random() * 256);
+                const green = Math.floor(Math.random() * 256);
+                const blue = Math.floor(Math.random() * 256);
 
-        e.target.style.boxShadow = "1px 1px 1px white";
+                e.target.style.backgroundColor =
+                    `rgb(${red}, ${green}, ${blue})`;
+            });
 
-        e.target.style.backgroundColor =
-            `rgb(${red},${green},${blue})`;
-    });
+            div.addEventListener("mouseleave", (e) => {
+                setTimeout(() => {
+                    e.target.style.backgroundColor = "gray";
+                }, 1000);
+            });
 
-    div.addEventListener("mouseout",(e)=>{
-        setTimeout(()=>{
-            e.target.style.backgroundColor = "gray"
-        },500)
-    })
+            fragment.appendChild(div);
+        }
 
-
-
-    fregment.appendChild(div);
-}
-
-container.append(fregment);
+        container.appendChild(fragment);

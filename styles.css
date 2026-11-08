@@ -1,36 +1,32 @@
-/*  your css code here. If applicable */
-
-        *{
-            margin: 0px;
-            padding: 0px;
+    * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        body{
+        body {
             height: 100vh;
             width: 100vw;
             background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
-
         }
-      .container {
-      width: 80vw;
-      height: 80vh;
-      background-color: black;
 
-      display: grid;
+        .container {
+            width: 80vw;
+            height: 80vh;
+            background-color: black;
 
-      grid-template-columns: repeat(40, 1fr);
-      grid-template-rows: repeat(20, 1fr);
+            display: grid;
+            grid-template-columns: repeat(40, 1fr);
+            grid-template-rows: repeat(20, 1fr);
+            gap: 4px;
+        }
 
-      gap: 4px;
-}
-
-.box {
-    background-color: gray;
-    border-radius: 20%;
-    cursor: pointer;
-    transition: background-color 0.5s;
-}
+        .square {
+            background-color: gray;
+            border-radius: 20%;
+            cursor: pointer;
+            transition: background-color 1s ease;
+        }
